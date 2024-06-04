@@ -10,7 +10,6 @@ function criarCard(produto){
     const descricao = document.createElement('p')
     const quantidade = document.createElement('p')
     const ingredientes = document.createElement('p')
-    const precoComDesconto = document.createElement('p')
     const divIcones = document.createElement('div')
     divIcones.classList.add('divIcones')
     const iconeDeletar = document.createElement('img')
@@ -27,6 +26,13 @@ function criarCard(produto){
     quantidade.textContent = "Quantidade: "+ produto.quantidade
     ingredientes.textContent = "Ingredientes: " + produto.ingredientes
     img.textContent = produto.imagem
+
+    const iconeAdicionar = document.getElementById('adicionar')
+
+    iconeAdicionar.addEventListener('click', ()=>{
+        window.location.href = '../pages/adicionar.html'
+    })
+
     
     divIcones.replaceChildren(iconeDeletar,iconeAtualizar)
 
@@ -39,7 +45,7 @@ function criarCard(produto){
         window.location.href='../pages/editar.html?idProduto='+produto.id
     })
 
-    card.append(nome, categoria, preco, desconto, descricao, quantidade, ingredientes,precoComDesconto, img, divIcones)
+    card.append(nome, categoria, preco, desconto, descricao, quantidade, ingredientes, img, divIcones)
     return card
 }
 

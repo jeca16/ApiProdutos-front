@@ -26,8 +26,10 @@ export async function postProdutos(produtos){
 }
 
 
-export async function putProdutos(produtos, produtosId){
-    const url = `http://localhost:8080/produtos/'${produtosId}'`
+export async function putProdutos(produtosId, produtos){
+    const url = `http://localhost:8080/produtos/${produtosId}`
+    console.log(produtosId);
+    console.log(produtos)
     const options = {
         method: 'PUT',
         headers: {
